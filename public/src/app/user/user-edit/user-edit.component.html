@@ -1,0 +1,19 @@
+<h3 class="text-center text-danger">Component Edit Users</h3>
+
+<div class="col-md-9 offset-md-2">
+  <form class="form-inline">
+
+    <label class="sr-only" for="firstname">Firstname</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="firstname" placeholder="Name" [(ngModel)]="editUser.firstname">
+
+    <label class="sr-only" for="lastname">Lastname</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="lastname" placeholder="Lastname" [(ngModel)]="editUser.lastname">
+
+    <label class="sr-only" for="email">Email</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" name="email" placeholder="E-mail" [(ngModel)]="editUser.email">
+    </div>
+
+    <button (click)="update()" class="btn btn-primary mb-2">Update</button>
+  </form>
+</div>

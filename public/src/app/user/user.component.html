@@ -1,0 +1,9 @@
+<h3 class="text-center text-primary">MEAN Stack CRUD Users</h3>
+
+<app-user-new (createNewUserEvent)="create($event)" ></app-user-new>
+
+<app-user-list
+[users]="users"
+(destroyUserEvent)="destroy($event)"
+(updateUserEvent)="update($event)">
+</app-user-list>

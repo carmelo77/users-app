@@ -1,0 +1,32 @@
+<h3 class="text-center text-danger">Lista Users</h3>
+
+<div class="col-md-10 offset-md-1">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user._id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="user.editable = !user.editable">Edit</button>
+          <button class="btn btn-danger" (click)="destroy(user)">Delete</button>
+
+          <app-user-edit *ngIf="user.editable"
+          (updateUserEvent)="update($event)"
+          [user]="user">
+          </app-user-edit>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
